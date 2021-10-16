@@ -1,0 +1,13 @@
+export PLUGIN_JUMP_NAME=jump
+
+export PLUGIN_JUMP_DATA=$(plugin_get_app_data_path $PLUGIN_JUMP_NAME)
+export PLUGIN_JUMP_LOGS=$(plugin_get_app_logs_path $PLUGIN_JUMP_NAME)
+export PLUGIN_JUMP_CONFIGS=$(plugin_get_app_configs_path $PLUGIN_JUMP_NAME)/config
+
+export PLUGIN_JUMP_CONFIG=$PLUGIN_JUMP_CONFIGS/jump.yml
+
+export PLUGIN_JUMP_VERSION=v0.7.4
+
+# echo "PLUGIN_JUMP_DATA: $PLUGIN_JUMP_DATA"
+# echo "PLUGIN_JUMP_LOGS: $PLUGIN_JUMP_LOGS"
+# echo "PLUGIN_JUMP_CONFIGS: $PLUGIN_JUMP_CONFIGS"

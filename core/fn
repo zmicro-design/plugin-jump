@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ensure_config() {
+  load inquirer
+
+  # load_config_file $PLUGIN_JUMP_CONFIG
+}
+
+export -f ensure_config

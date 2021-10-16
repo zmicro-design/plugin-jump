@@ -1,0 +1,45 @@
+#!/bin/bash
+
+help() {
+  echo "Usage:"
+  echo "  zjump start"
+}
+
+core() {
+  if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    help
+    exit 0
+  fi
+
+  ensure_config
+
+  if [ ! -f $PLUGIN_JUMP_CONFIG ]; then
+    log_error "Please config jump config in $PLUGIN_JUMP_CONFIG"
+    echo ""
+    echo "example:"
+    echo "
+forward:
+  servers:
+    - '0.0.0.0:2223:1.2.3.4:80'
+    - '0.0.0.0:2234:1.2.3.4:443'
+    - '0.0.0.0:2235:1.2.3.4:22'
+"
+    exit 1
+  fi
+
+  zmicro plugin run compose start $PLUGIN_JUMP_NAME
+
+  # init user
+  # @TODO
+  # zmicro plugin run compose exec $PLUGIN_JUMP_NAME:jump delete_admin admin >>/dev/null 2>&1
+  # #
+  # zmicro plugin run compose exec $PLUGIN_JUMP_NAME:jump create_admin admin admin >>/dev/null 2>&1
+
+  log_success "启动成功"
+}
+
+run() {
+  core $@
+}
+
+run $@
