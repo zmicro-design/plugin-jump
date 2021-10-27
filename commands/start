@@ -14,7 +14,7 @@ core() {
   ensure_config
 
   if [ ! -f $PLUGIN_JUMP_CONFIG ]; then
-    log_error "Please config jump config in $PLUGIN_JUMP_CONFIG"
+    log::error "Please config jump config in $PLUGIN_JUMP_CONFIG"
     echo ""
     echo "example:"
     echo "
@@ -35,7 +35,7 @@ forward:
   # #
   # zmicro plugin run compose exec $PLUGIN_JUMP_NAME:jump create_admin admin admin >>/dev/null 2>&1
 
-  log_success "启动成功"
+  log::success "启动成功"
 }
 
 run() {

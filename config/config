@@ -1,8 +1,8 @@
 export PLUGIN_JUMP_NAME=jump
 
-export PLUGIN_JUMP_DATA=$(plugin_get_app_data_path $PLUGIN_JUMP_NAME)
-export PLUGIN_JUMP_LOGS=$(plugin_get_app_logs_path $PLUGIN_JUMP_NAME)
-export PLUGIN_JUMP_CONFIGS=$(plugin_get_app_configs_path $PLUGIN_JUMP_NAME)/config
+export PLUGIN_JUMP_DATA=$(plugin::get_app_data_path $PLUGIN_JUMP_NAME)
+export PLUGIN_JUMP_LOGS=$(plugin::get_app_logs_path $PLUGIN_JUMP_NAME)
+export PLUGIN_JUMP_CONFIGS=$(plugin::get_app_configs_path $PLUGIN_JUMP_NAME)/config
 
 export PLUGIN_JUMP_CONFIG=$PLUGIN_JUMP_CONFIGS/jump.yml
 
